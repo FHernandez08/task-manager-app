@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Task Manager App</h1>
+    </header>
+
+    <main>
+        <button class="add-task">Add Task</button>
+
+        <div class="form-section">
+            <form id="add-details" style="display: none;">
+                <h3>Add Task</h3>
+                <label for="task-title">Title Name:</label>
+                <input type="text" name="task-title" id="task-title">
+
+                <label for="importance">Importance:</label>
+                <select name="importance" id="task-importance">
+                    <option value="default">---Choose an option---</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <label for="date">Enter the due date:</label>
+                <input type="date" name="task-date" id="task-date">
+
+                <label for="section">Category: </label>
+                <select name="category-item" id="category-item"></select>
+
+                <input type="text" id="newOptionInput" placeholder="Enter new option">
+
+                <button class="submit">Submit Task</button>
+                <button class="closeForm">Close</button>
+            </form>
+        </div>
+
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Importance</th>
+                    <th>Due Date</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+        </table>
+    </main>
+
+    <footer>
+        <h4>&copy; Copyrighted by Fidel Hernandez</h4>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
