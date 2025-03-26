@@ -13,43 +13,44 @@
     </header>
 
     <main>
-        <button class="add-task">Add Task</button>
+        <button title="add" class="add-task">Add Task</button>
 
-        <div class="form-section">
-            <form id="add-details" style="display: none;">
-                <h3>Add Task</h3>
-                <label for="task-title">Title Name:</label>
-                <input type="text" name="task-title" id="task-title">
+        <!-- form section to add tasks -->
+         <form id="task-form" hidden>
+            <h4>Add your next task!</h4>
 
-                <label for="importance">Importance:</label>
-                <select name="importance" id="task-importance">
-                    <option value="default">---Choose an option---</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
+            <label for="task-name">Enter the name of your task:</label>
+            <input type="text" name="task-name" id="task-name" required>
 
-                <label for="date">Enter the due date:</label>
-                <input type="date" name="task-date" id="task-date">
+            <label for="importance">Choose the importance:</label>
+            <select name="importance" id="importance">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
 
-                <label for="section">Category: </label>
-                <select name="category-item" id="category-item"></select>
+            <label for="category">Type of task:</label>
+            <input type="text" name="category" id="category">
 
-                <input type="text" id="newOptionInput" placeholder="Enter new option">
+            <label for="date">Date:</label>
+            <input type="date" name="date" id="date">
 
-                <button type="submit" class="submit">Submit Task</button>
-                <button type="reset" class="closeForm">Close</button>
-            </form>
-        </div>
+            <div id="form-buttons">
+                <button id="cancel">Clear Form</button>
+                <button type="submit" id="submit">Submit Form</button>
+            </div>
+         </form>
 
-        <table id="dataTable">
+        <!-- table that will add details from the task being added-->
+        <!-- it will unclude buttons that would be able to delete and edit tasks (possibly in JS file)-->
+        <table id="tasks-table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Importance</th>
-                    <th>Due Date</th>
-                    <th>Category</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Importance</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Date</th>
                 </tr>
             </thead>
         </table>
