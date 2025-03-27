@@ -15,32 +15,42 @@
     <main>
         <button title="add" class="add-task">Add Task</button>
 
-        <!-- form section to add tasks -->
-         <form id="task-form" hidden>
-            <h4>Add your next task!</h4>
+        <div class="form-popup" id="myForm" hidden>
+            <!-- form section to add tasks -->
+            <form id="task-form">
+                <h4>Add your next task!</h4>
 
-            <label for="task-name">Enter the name of your task:</label>
-            <input type="text" name="task-name" id="task-name" required>
+                <section id="name-section">
+                    <label for="task-name">Enter the name of your task:</label>
+                    <input type="text" name="task-name" id="task-name" required>
+                </section>
 
-            <label for="importance">Choose the importance:</label>
-            <select name="importance" id="importance">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
+                <section id="importance-section">
+                    <label for="importance">Choose the importance:</label>
+                    <select name="importance" id="importance">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </section>
 
-            <label for="category">Type of task:</label>
-            <input type="text" name="category" id="category">
+                <section id="category-section">
+                    <label for="category">Type of task:</label>
+                    <input type="text" name="category" id="category">
+                </section>
 
-            <label for="date">Date:</label>
-            <input type="date" name="date" id="date">
+                <section id="date-section">
+                    <label for="date">Date:</label>
+                    <input type="date" name="date" id="date">
+                </section>
 
-            <div id="form-buttons">
-                <button id="cancel">Clear Form</button>
-                <button type="submit" id="submit">Submit Form</button>
-            </div>
-         </form>
-
+                <div id="form-buttons">
+                    <button type="reset" id="cancel">Clear Form</button>
+                    <button type="submit" id="submit">Submit Form</button>
+                </div>
+            </form>
+        </div>
+        
         <!-- table that will add details from the task being added-->
         <!-- it will unclude buttons that would be able to delete and edit tasks (possibly in JS file)-->
         <table id="tasks-table">
