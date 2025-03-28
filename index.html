@@ -15,7 +15,7 @@
     <main>
         <button title="add" class="add-task">Add Task</button>
 
-        <div class="form-popup" id="myForm" hidden>
+        <div class="form-popup" id="myForm">
             <!-- form section to add tasks -->
             <form id="task-form">
                 <h4>Add your next task!</h4>
@@ -27,7 +27,8 @@
 
                 <section id="importance-section">
                     <label for="importance">Choose the importance:</label>
-                    <select name="importance" id="importance">
+                    <select name="importance" id="importance" required>
+                        <option value="default">--Choose an option--</option>
                         <option value="low">Low</option>
                         <option value="medium">Medium</option>
                         <option value="high">High</option>
@@ -36,17 +37,17 @@
 
                 <section id="category-section">
                     <label for="category">Type of task:</label>
-                    <input type="text" name="category" id="category">
+                    <input type="text" name="category" id="category" required>
                 </section>
 
                 <section id="date-section">
                     <label for="date">Date:</label>
-                    <input type="date" name="date" id="date">
+                    <input type="date" name="date" id="date" required>
                 </section>
 
                 <div id="form-buttons">
                     <button type="reset" id="cancel">Clear Form</button>
-                    <button type="submit" id="submit">Submit Form</button>
+                    <button id="submit">Submit Form</button>
                 </div>
             </form>
         </div>

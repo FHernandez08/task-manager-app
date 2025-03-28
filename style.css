@@ -40,6 +40,7 @@ table, th, td {
 
 /* Form Styles */
 #myForm {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
