@@ -23,6 +23,18 @@ header {
     height: 50px;
 }
 
+#search-category {
+    background-image: url('images/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  width: 400px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
 #tasks-table {
     margin: 50px 100px;
     width: 600px;
