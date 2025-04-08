@@ -21,6 +21,8 @@ addBtn.addEventListener("click", () => {
 // clears the form and closes it
 clearBtn.addEventListener("click", () => {
     form.style.display = 'none';
+    form.reset();
+    taskId = null;
 });
 
 // submitting the form with the details and then create the buttons to edit the form when interacting
@@ -34,7 +36,7 @@ submitBtn.addEventListener("click", (event) => {
     let date = dateInput.value;
 
     let storeTask = {
-        "id": idCounter,
+        "id": idCounter + 1,
         "name": name,
         "importance": importance,
         "category": category,
@@ -46,7 +48,25 @@ submitBtn.addEventListener("click", (event) => {
         "task", JSON.stringify(storeTask)
     );
 
-    let template = `
+    // checks if the task exists or not to determine to edit or create a new task row
+    // if it exists
+    if (taskId) {
+        const row = document.querySelector(`[data-id="${taskId}"]`).closest('tr');
+        const cells = row.querySelectorAll('td');
+
+        cells[1].textContent = name;
+        cells[2].textContent = importance;
+        cells[3].textContent = category;
+        cells[4].textContent = date;
+
+        form.style.display = "none";
+        form.reset();
+        taskId = null;
+    }
+
+    // if it doesn't exist -> creating a new row
+    else {
+        let template = `
         <tr>
             <td>${idCounter}</td>
             <td>${name}</td>
@@ -57,12 +77,15 @@ submitBtn.addEventListener("click", (event) => {
                 <button class="edit" data-id="${idCounter}">Edit Task</button>
                 <button class="remove" data-id="${idCounter}">Remove Task</button>
             </td>
-        </tr>
-    `;
+        </tr>`;
 
-    table.innerHTML += template;
+        table.innerHTML += template;
+    }
 
+    // clears the form and hides it to create new task
     form.style.display = "none";
+    form.reset();
+    taskId = null;
 });
 
 table.addEventListener("click", function (event) {
