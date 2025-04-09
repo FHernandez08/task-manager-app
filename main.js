@@ -73,9 +73,12 @@ submitBtn.addEventListener("click", (event) => {
             <td>${importance}</td>
             <td>${category}</td>
             <td>${date}</td>
-            <td>
+            <td class="button-row">
                 <button class="edit" data-id="${idCounter}">Edit Task</button>
                 <button class="remove" data-id="${idCounter}">Remove Task</button>
+            </td>
+            <td>
+                <input type="checkbox" name="complete-task" class="complete-task" data-id="${idCounter}">
             </td>
         </tr>`;
 
@@ -108,4 +111,6 @@ table.addEventListener("click", function (event) {
             row.remove();
         }
     };
+
+    
 })

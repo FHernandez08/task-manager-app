@@ -92,3 +92,32 @@ table, th, td {
     background-color: green;
     color: white;
 }
+
+/* button designs */
+.button-row {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.edit, .remove, .completion {
+    width: 125px;
+    height: 25px;
+    border: none;
+    border-radius: 10px;
+}
+
+.edit {
+    background-color: yellow;
+    color: black;
+}
+
+.remove {
+    background-color: red;
+    color: white;
+}
+
+.completion {
+    background-color: green;
+    color: white;
+}
