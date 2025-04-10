@@ -112,5 +112,18 @@ table.addEventListener("click", function (event) {
         }
     };
 
-    
+    if (event.target.classList.contains("complete-task")) {
+        const row = event.target.closest('tr');
+        const cells = row.querySelectorAll('td');
+
+        if (event.target.checked) {
+            
+
+
+        }
+        else {
+            row.style.backgroundColor = "white";
+            row.style.textDecoration = "none";
+        }
+    }
 })
