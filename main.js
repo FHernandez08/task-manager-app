@@ -9,6 +9,7 @@ let categoryInput = document.querySelector('#category');
 let dateInput = document.querySelector('#date');
 
 let table = document.querySelector('#tasks-table');
+let tableBody = document.querySelector('#tasks-body');
 let taskId = null;
 let idCounter = 0;
 
@@ -82,7 +83,8 @@ submitBtn.addEventListener("click", (event) => {
             </td>
         </tr>`;
 
-        table.innerHTML += template;
+        // using tableBody instead of table keeps the headers intact and not affecting the overall table (preferred) **4/18**
+        tableBody.innerHTML += template;
     }
 
     // clears the form and hides it to create new task
@@ -118,9 +120,8 @@ table.addEventListener("click", function (event) {
 
         if (event.target.checked) {
             
-
-
         }
+
         else {
             row.style.backgroundColor = "white";
             row.style.textDecoration = "none";
