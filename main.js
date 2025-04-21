@@ -26,6 +26,9 @@ clearBtn.addEventListener("click", () => {
     taskId = null;
 });
 
+// removes tasks whenever the completed tasks checkbox is clicked
+
+
 // submitting the form with the details and then create the buttons to edit the form when interacting
 submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
@@ -94,6 +97,8 @@ submitBtn.addEventListener("click", (event) => {
 });
 
 table.addEventListener("click", function (event) {
+
+    // uploads the current task and allows modifications when button clicked
     if (event.target.classList.contains("edit")) {
         taskId = event.target.dataset.id;
         form.style.display = 'block';
@@ -107,6 +112,7 @@ table.addEventListener("click", function (event) {
         dateInput.value = cells[4].textContent;
     };
 
+    // remove the tasks currently present
     if (event.target.classList.contains("remove")) {
         const row = event.target.closest('tr');
         if (row) {
@@ -114,17 +120,18 @@ table.addEventListener("click", function (event) {
         }
     };
 
+    // completes the task
     if (event.target.classList.contains("complete-task")) {
         const row = event.target.closest('tr');
-        const cells = row.querySelectorAll('td');
 
         if (event.target.checked) {
-            
+            row.style.backgroundColor = "gray";
+            row.style.textDecoration = "line-through";
         }
 
         else {
             row.style.backgroundColor = "white";
             row.style.textDecoration = "none";
-        }
-    }
-})
+        };
+    };
+});
