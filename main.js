@@ -2,6 +2,8 @@ const addBtn = document.querySelector(".add-task");
 const clearBtn = document.querySelector("#cancel");
 const submitBtn = document.querySelector("#submit");
 const form = document.querySelector('#myForm');
+const filterBtn = document.querySelector("#filterCompleted");
+const showAllBtn = document.querySelector("#showAll");
 
 let nameInput = document.querySelector('#task-name');
 let importanceInput = document.querySelector('#importance');
@@ -12,6 +14,7 @@ let table = document.querySelector('#tasks-table');
 let tableBody = document.querySelector('#tasks-body');
 let taskId = null;
 let idCounter = 0;
+let tasks = [];
 
 // buttons //
 // opens the form
@@ -26,7 +29,37 @@ clearBtn.addEventListener("click", () => {
     taskId = null;
 });
 
-// removes tasks whenever the completed tasks checkbox is clicked
+// function to clear the table adn re-add rows based on filtered results
+function renderTasks(taskArray) {
+    tableBody.innerHTML = "";
+
+    taskArray.forEach(task => {
+        const row = document.createElement('tr');
+
+        if (task.completed) {
+            row.style.backgroundColor = "gray";
+            row.style.textDecoration = "line-through";
+        }
+
+        row.innerHTML = `
+        <tr>
+            <td>${task.id}</td>
+            <td>${task.name}</td>
+            <td>${task.importance}</td>
+            <td>${task.category}</td>
+            <td>${task.date}</td>
+            <td class="button-row">
+                <button class="edit" data-id="${task.id}">Edit Task</button>
+                <button class="remove" data-id="${task.id}">Remove Task</button>
+            </td>
+            <td>
+                <input type="checkbox" name="completed-task" class="complete-task" data-id="${task.id}" ${task.completed ? "checked" : ""}>
+            </td>
+        </tr>`;
+
+        tableBody.appendChild(row);
+    })
+}
 
 
 // submitting the form with the details and then create the buttons to edit the form when interacting
@@ -40,16 +73,19 @@ submitBtn.addEventListener("click", (event) => {
     let date = dateInput.value;
 
     let storeTask = {
-        "id": idCounter + 1,
+        "id": idCounter,
         "name": name,
         "importance": importance,
         "category": category,
-        "date": date
+        "date": date,
+        "completed": false
     }
+
+    tasks.push(storeTask);
 
     // adds task to local storage
     localStorage.setItem(
-        "task", JSON.stringify(storeTask)
+        "task", JSON.stringify(tasks)
     );
 
     // checks if the task exists or not to determine to edit or create a new task row
@@ -115,6 +151,12 @@ table.addEventListener("click", function (event) {
     // remove the tasks currently present
     if (event.target.classList.contains("remove")) {
         const row = event.target.closest('tr');
+        const taskId = parseInt(event.target.dataset.id);
+
+        tasks = tasks.filter(t => t.id !== taskId);
+
+        localStorage.setItem("task", JSON.stringify(tasks));
+
         if (row) {
             row.remove();
         }
@@ -123,6 +165,12 @@ table.addEventListener("click", function (event) {
     // completes the task
     if (event.target.classList.contains("complete-task")) {
         const row = event.target.closest('tr');
+        const taskId = parseInt(event.target.dataset.id);
+
+        const task = tasks.find(t => t.id === taskId);
+        if (task) {
+            task.completed = event.target.checked;
+        }
 
         if (event.target.checked) {
             row.style.backgroundColor = "gray";
@@ -133,5 +181,27 @@ table.addEventListener("click", function (event) {
             row.style.backgroundColor = "white";
             row.style.textDecoration = "none";
         };
+
+        localStorage.setItem("task", JSON.stringify(tasks));
     };
+});
+
+// functionality for the show completed tasks/all tasks
+filterBtn.addEventListener("click", () => {
+    const completedTasks = tasks.filter(task => task.completed);
+    renderTasks(completedTasks);
+})
+
+showAllBtn.addEventListener("click", () => {
+    renderTasks(tasks);
+})
+
+// load tasks from localStorage on page load
+window.addEventListener("DOMContentLoaded", () => {
+    const storedTasks = JSON.parse(localStorage.getItem("task"));
+    if (storedTasks) {
+        tasks = storedTasks;
+        idCounter = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) : 0;
+        renderTasks(tasks);
+    }
 });

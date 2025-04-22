@@ -23,18 +23,6 @@ header {
     height: 50px;
 }
 
-#search-category {
-    background-image: url('images/search-icon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  background-size: 25px;
-  width: 400px;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
-
 #tasks-table {
     margin: 50px 100px;
     width: 600px;
@@ -119,5 +107,27 @@ table, th, td {
 
 .completion {
     background-color: green;
+    color: white;
+}
+
+.above-table {
+    display: flex;
+    flex-direction: column;
+}
+
+#filterCompleted,
+#showAll {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+#filterCompleted {
+    background-color: lightseagreen;
+    color: white;
+}
+
+#showAll {
+    background-color: lightsalmon;
     color: white;
 }

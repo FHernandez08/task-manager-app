@@ -52,7 +52,12 @@
             </form>
         </div>
         
-        <input type="text" name="search-category" id="search-category" title="Type in name" placeholder="Search for task by category...">
+        <div class="above-table">
+            <div class="filter-btns">
+                <button id="filterCompleted">Show Completed Tasks</button>
+                <button id="showAll">Show All Tasks</button>
+            </div>
+        </div>
 
         <!-- table that will add details from the task being added-->
         <!-- it will unclude buttons that would be able to delete and edit tasks (possibly in JS file)-->
@@ -68,9 +73,6 @@
             </thead>
             <tbody id="tasks-body"></tbody>
         </table>
-
-        <input type="checkbox" name="completed-tasks" id="completed-tasks" class="completed-tasks">
-        <label for="completed-tasks" data-toggle="toggle">Completed Tasks</label>
     </main>
 
     <footer>
