@@ -4,6 +4,7 @@ const submitBtn = document.querySelector("#submit");
 const form = document.querySelector('#myForm');
 const filterBtn = document.querySelector("#filterCompleted");
 const showAllBtn = document.querySelector("#showAll");
+const darkModeToggle = document.getElementById("darkModeToggle");
 
 let nameInput = document.querySelector('#task-name');
 let importanceInput = document.querySelector('#importance');
@@ -204,4 +205,12 @@ window.addEventListener("DOMContentLoaded", () => {
         idCounter = tasks.length > 0 ? Math.max(...tasks.map(t => t.id)) : 0;
         renderTasks(tasks);
     }
+});
+
+// to add dark mode to the page
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    const darkModeOn = document.body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", darkModeOn ? "on" : "off");
 });
