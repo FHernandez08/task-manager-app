@@ -30,6 +30,7 @@ clearBtn.addEventListener("click", () => {
     taskId = null;
 });
 
+
 // function to clear the table adn re-add rows based on filtered results
 function renderTasks(taskArray) {
     tableBody.innerHTML = "";

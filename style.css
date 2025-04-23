@@ -16,10 +16,9 @@ header {
 
     padding: 5px;
     width: 100px;
-    background-color: brown;
-    color: white;
+    background-color: white;
     border-radius: 10px;
-    border: none;
+    border: 1px solid black;
     height: 50px;
 }
 
@@ -127,9 +126,31 @@ table, th, td {
     color: white;
 }
 
+#filterCompleted:hover {
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: lightseagreen;
+    background-color: white;
+}
+
+#filterCompleted:active {
+    border: 1px solid lightseagreen;
+}
+
 #showAll {
     background-color: lightsalmon;
     color: white;
+}
+
+#showAll:hover {
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: lightsalmon;
+    background-color: white;
+}
+
+#showAll:active {
+    border: 1px solid lightsalmon;
 }
 
 #darkModeToggle {
@@ -175,3 +196,89 @@ body.dark-mode button {
     color: #f0f0f0;
     border: 1px solid #555;
 }
+
+body.dark-mode #filterCompleted {
+    background-color: #333;
+    color: lightseagreen;
+}
+
+body.dark-mode #filterCompleted:hover {
+    background-color: lightseagreen;
+    color: #333;
+}
+
+body.dark-mode #showAll {
+    background-color: #333;
+    color: lightsalmon;
+}
+
+body.dark-mode #showAll:hover {
+    background-color: lightsalmon;
+    color: #333;
+}
+
+button:hover {
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+    header h1 {
+      font-size: 1.2rem;
+    }
+  
+    #tasks-table {
+      width: 100%;
+      margin: 20px auto;
+      font-size: 12px;
+    }
+  
+    .add-task {
+      width: 60px;
+      height: 40px;
+      font-size: 0.9rem;
+      padding: 5px;
+      top: 10px;
+      right: 10px;
+    }
+  
+    #task-form {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    form input,
+    form select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .button-row {
+      grid-template-rows: repeat(3, auto);
+    }
+  
+    .edit,
+    .remove,
+    .completion {
+      width: 100%;
+    }
+  
+    #filterCompleted,
+    #showAll {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .above-table {
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 10px;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  }
