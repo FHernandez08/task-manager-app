@@ -63,6 +63,11 @@ table, th, td {
     text-align: center;
 }
 
+body.dark-mode #task-form {
+    background-color: #121212;
+    color: white;
+}
+
 #cancel, #submit {
     border: none;
     border-radius: 10px;
@@ -99,9 +104,28 @@ table, th, td {
     color: black;
 }
 
+body.dark-mode .edit {
+    color: yellow;
+}
+
 .remove {
     background-color: red;
     color: white;
+}
+
+body.dark-mode .remove {
+    color: red;
+}
+
+body.dark-mode .edit,
+body.dark-mode .remove {
+    border: 1px solid #000000;
+}
+
+body.dark-mode .edit:hover,
+body.dark-mode .remove:hover {
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .completion {
