@@ -36,11 +36,13 @@ clearBtn.addEventListener("click", () => {
 });
 
 registerBtn.addEventListener("click", () => {
-    
+    registerForm.style.display = 'block';
+    loginForm.style.display = 'none';
 });
 
 loginBtn.addEventListener("click", () => {
-
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
 });
 
 // function to clear the table adn re-add rows based on filtered results //
