@@ -241,7 +241,7 @@ body.dark-mode #showAll:hover {
     color: #333;
 }
 
-button:hover {
+.add-task:hover {
     background-color: brown;
     color: white;
     cursor: pointer;
@@ -306,3 +306,25 @@ button:hover {
       padding: 8px;
     }
   }
+
+#register-btn, #login-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 200px;
+}
+
+#register-btn,
+#login-btn {
+    background-color: blue;
+    color: white;
+}
+
+#register-btn:hover,
+#login-btn:hover {
+    background-color: white;
+    color: blue;
+    border: 1px solid blue;
+    cursor: pointer;
+}
