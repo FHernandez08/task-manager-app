@@ -9,10 +9,6 @@
 </head>
 <body>
     <header>
-        <div class="login-register">
-            <button id="register-btn">Register</button>
-            <button id="login-btn">Login</button>
-        </div>
         <h1>Task Manager App</h1>
         <button id="darkModeToggle">Dark Mode</button>
     </header>
@@ -53,60 +49,6 @@
                 <div id="form-buttons">
                     <button type="reset" id="cancel">Clear Form</button>
                     <button type="submit" id="submit">Submit Form</button>
-                </div>
-            </form>
-        </div>
-        
-        <div id="register">
-            <form action="/register" method="post" id="register-form" hidden>
-                <h4>Register!</h4>
-                <p>Enter the following credentials to create your account.</p>
-
-                <section id="firstname-section">
-                    <label for="first-name">First Name:</label>
-                    <input type="text" name="first-name" id="first-name">
-                </section>
-
-                <section id="lastname-section">
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" name="last-name" id="last-name">
-                </section>
-
-                <section id="email-section">
-                    <label for="new-user-email">Email:</label>
-                    <input type="email" name="new-user-email" id="new-user-email" required>
-                </section>
-
-                <section id="password-section">
-                    <label for="new-user-pw">Password:</label>
-                    <input type="password" name="new-user-pw" id="new-user-pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-                </section>
-
-                <div id="register-buttons">
-                    <button id="register-clear" type="reset">Clear</button>
-                    <button id="register-create" type="submit">Create Account</button>
-                </div>
-            </form>
-        </div>
-
-        <div id="login">
-            <form action="/login" method="post" id="login-form" hidden>
-                <h4>Login into your account!</h4>
-                <p>Enter your email and password to access your tasks.</p>
-
-                <section id="login-email">
-                    <label for="login-email-details">Email:</label>
-                    <input type="email" name="login-email-details" id="login-email-details" required>
-                </section>
-
-                <section id="login-pw">
-                    <label for="login-password-details">Password:</label>
-                    <input type="password" name="login-password-details" id="login-password-details" required>
-                </section>
-
-                <div id="login-buttons">
-                    <button type="reset" id="login-clear">Clear</button>
-                    <button type="submit" id="login-submit">Login</button>
                 </div>
             </form>
         </div>

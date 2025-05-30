@@ -328,3 +328,15 @@ body.dark-mode #showAll:hover {
     border: 1px solid blue;
     cursor: pointer;
 }
+
+body.dark-mode #register-btn,
+body.dark-mode #login-btn {
+    background-color: #555;
+    color: blue;
+}
+
+body.dark-mode #register-btn:hover,
+body.dark-mode #login-btn:hover {
+    background-color: blue;
+    color: #ffffff;
+}

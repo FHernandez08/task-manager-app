@@ -2,14 +2,10 @@ const addBtn = document.querySelector(".add-task");
 const clearBtn = document.querySelector("#cancel");
 const submitBtn = document.querySelector("#submit");
 const form = document.querySelector('#myForm');
-const registerForm = document.querySelector('#register-form');
-const loginForm = document.querySelector('#login-form');
 
 const filterBtn = document.querySelector("#filterCompleted");
 const showAllBtn = document.querySelector("#showAll");
 const darkModeToggle = document.getElementById("darkModeToggle");
-const registerBtn = document.querySelector("#register-btn");
-const loginBtn = document.querySelector("#login-btn");
 
 let nameInput = document.querySelector('#task-name');
 let importanceInput = document.querySelector('#importance');
@@ -33,16 +29,6 @@ clearBtn.addEventListener("click", () => {
     form.style.display = 'none';
     form.reset();
     taskId = null;
-});
-
-registerBtn.addEventListener("click", () => {
-    registerForm.style.display = 'block';
-    loginForm.style.display = 'none';
-});
-
-loginBtn.addEventListener("click", () => {
-    loginForm.style.display = 'block';
-    registerForm.style.display = 'none';
 });
 
 // function to clear the table adn re-add rows based on filtered results //
