@@ -1,0 +1,60 @@
+#login-register {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 150px;
+    gap: 10px;
+}
+
+.login-btn,
+.register-btn {
+    border: none;
+    background-color: #1e90ff;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+body.dark-mode .login-btn,
+body.dark-mode .register-btn {
+    background-color: #333;
+    color: #1e90ff;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+    border: 1px solid #1e90ff;
+    background-color: #ffffff;
+    color: #1e90ff;
+    cursor: pointer;
+}
+
+body.dark-mode .login-btn:hover,
+body.dark-mode .register-btn:hover {
+    background-color: #1e90ff;
+    color: #333;
+}
+
+#registerForm,
+#loginForm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    display: none;
+}
+
+#register-cancel,
+#login-cancel {
+    
+}
+
+#register-submit,
+#login-submit {
+
+}
