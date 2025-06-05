@@ -1,51 +1,95 @@
 #login-register {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    width: 150px;
-    gap: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 150px;
+  gap: 10px;
 }
 
 .login-btn,
 .register-btn {
-    border: none;
-    background-color: #1e90ff;
-    color: white;
-    padding: 5px;
-    border-radius: 10px;
+  border: none;
+  background-color: #1e90ff;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 body.dark-mode .login-btn,
 body.dark-mode .register-btn {
-    background-color: #333;
-    color: #1e90ff;
+  background-color: #333;
+  color: #1e90ff;
 }
 
 .login-btn:hover,
 .register-btn:hover {
-    border: 1px solid #1e90ff;
-    background-color: #ffffff;
-    color: #1e90ff;
-    cursor: pointer;
+  border: 1px solid #1e90ff;
+  background-color: #ffffff;
+  color: #1e90ff;
+  cursor: pointer;
 }
 
 body.dark-mode .login-btn:hover,
 body.dark-mode .register-btn:hover {
-    background-color: #1e90ff;
-    color: #333;
+  background-color: #1e90ff;
+  color: #333;
 }
 
 #registerForm,
 #loginForm {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .popup {
-    display: none;
+  display: none;
 }
 
+#email-login,
+#pw-login,
+#first-name,
+#last-name,
+#email,
+#password {
+  display: flex;
+  flex-direction: column;
+}
+
+#email-login label,
+#pw-login label,
+#first-name label,
+#last-name label,
+#email label,
+#password label {
+  text-align: left;
+  padding-left: 10px;
+}
+
+#email-login input,
+#pw-login input,
+#first-name input,
+#last-name input,
+#email input,
+#password input {
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+#login-buttons,
+#register-buttons {
+    padding-top: 10px;
+}
+
+#register-cancel,
+#register-submit,
+#login-cancel,
+#login-submit {
+    width: 125px;
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+}

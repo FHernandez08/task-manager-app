@@ -21,6 +21,7 @@
   "homepage": "https://github.com/FHernandez08/task-manager-app#readme",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "crypto": "^1.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",

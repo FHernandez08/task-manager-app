@@ -79,12 +79,16 @@ body.dark-mode #task-form {
   margin-top: 10px;
 }
 
-#cancel {
+#cancel,
+#register-cancel,
+#login-cancel {
   background-color: grey;
   color: white;
 }
 
-#submit {
+#submit,
+#register-submit,
+#login-submit {
   background-color: green;
   color: white;
 }
