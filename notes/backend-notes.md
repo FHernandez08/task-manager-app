@@ -12,3 +12,12 @@ I feel like by reviewing it and being able to understanding to what's going on i
 I will decide before going to bed if I would work on it again tomorrow, but I am keen on reviewing the materials and taking notes.
 
 ### 6/5/2025 - Reviewing and taking notes of current project standing
+The notes were written down on my notebook to review, and after reviewing the project, I believe that there's more work that can benefit the project, such as where if there is no user account active, then the application can not work without that access gained.
+
+I think I will incorporate that probably at the end of this week or most likely next week, because I am completing a blogging platform application which will take me a while to complete and I have my sights on finishing it this week.
+
+Tomorrow, I will continue to work on the backend of this project, where I will be adding the register route details that will create a new user, token secret and be added into the database.
+
+This weekend, I will run some tests to ensure that the project is working correctly and then plan out how to implement the gained access feature to the project.
+
+### 6/6/2025 - 
