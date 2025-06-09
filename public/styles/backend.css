@@ -93,3 +93,24 @@ body.dark-mode .register-btn:hover {
     border-radius: 10px;
     height: 25px;
 }
+
+input {
+  padding: 5px;
+}
+
+.logout-btn {
+    background-color: #222; /* Dark background */
+    color: #fff; /* White text */
+    padding: 10px 16px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #fff;
+    color: #222;
+}

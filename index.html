@@ -15,9 +15,13 @@
         <div id="login-register">
             <button title="Login" class="login-btn">Login</button>
             <button title="Register" class="register-btn">Register</button>
+
+            <button id="logout-btn" style="display: none;">Logout</button>
         </div>
 
-        <h1>Task Manager App</h1>
+        <h1 id="welcome-message">
+            Welcome to the Task Manager App!
+        </h1>
         <button id="darkModeToggle">Dark Mode</button>
     </header>
 
@@ -68,22 +72,22 @@
 
                 <div id="first-name">
                     <label for="first-name-detail">First Name</label>
-                    <input type="text" name="first-name-detail" id="first-name-detail" required pattern="^[A-Z][a-z]*">
+                    <input type="text" name="firstName" id="first-name-detail" required pattern="^[A-Z][a-z]*">
                 </div>
 
                 <div id="last-name">
                     <label for="last-name-detail">Last Name</label>
-                    <input type="text" name="last-name-detail" id="last-name-detail" required pattern="^[A-Z][a-z]*">
+                    <input type="text" name="lastName" id="last-name-detail" required pattern="^[A-Z][a-z]*">
                 </div>
 
                 <div id="email">
                     <label for="email-detail">Email</label>
-                    <input type="email" name="email-detail" id="email-detail" required>
+                    <input type="email" name="email" id="email-detail" required>
                 </div>
 
                 <div id="password">
                     <label for="pw-detail">Password</label>
-                    <input type="password" name="pw-detail" id="pw-detail" required pattern="(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$" title="Password must be at least 8 characters and include at least one uppercase letter, one number, and one symbol.">
+                    <input type="password" name="password" id="pw-detail" required pattern="(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$" title="Password must be at least 8 characters and include at least one uppercase letter, one number, and one symbol.">
                 </div>
 
                 <div id="register-buttons">
@@ -100,12 +104,12 @@
 
                 <div id="email-login">
                     <label for="email-lg">Email</label>
-                    <input type="email" name="email-lg" id="email-lg" required>
+                    <input type="email" name="email" id="email-lg" required>
                 </div>
 
                 <div id="pw-login">
                     <label for="login-pw">Password</label>
-                    <input type="password" name="login-pw" id="login-pw" required>
+                    <input type="password" name="password" id="login-pw" required>
                 </div>
 
                 <div id="login-buttons">
@@ -143,6 +147,8 @@
     </footer>
     <script src="js/main.js"></script>
     <script src="js/backend.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 
 </html>

@@ -20,12 +20,11 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        unique: true
     },
     jwtSecret: {
         type: String,
         required: true,
-        default: () => crypto.randomBytes(64).toString('hex');
+        default: () => crypto.randomBytes(64).toString('hex')
     }
 });
 

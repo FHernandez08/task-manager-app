@@ -5,6 +5,7 @@ const User = require("./models/user.js");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const { authMiddleware } = require("./middleware/authMiddleware.js");
+const crypto = require("crypto");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -59,6 +60,7 @@ app.post("/login", async (req, res) => {
       expiresIn: "1h",
     });
 
+    console.log("User successfully logged in!")
     res.status(200).json({
       message: "Login successful!",
       data: token,
@@ -76,9 +78,35 @@ app.post("/register", async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
   if (!firstName || !lastName || !email || !password) {
-    res.status(400).send('Please complete the form with all the details!');
+    return res.status(400).send('Please complete the form with all the details!');
   };
 
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(409).send("Email already registered!")
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const jwtSecret = crypto.randomBytes(64).toString("hex")
+
+    const newUser = new User({
+      firstName,
+      lastName,
+      email,
+      password: hashedPassword,
+      jwtSecret
+    })
+
+    await newUser.save();
+
+    return res.status(201).send("Registration successful! You may now log in.");
+  }
+
+  catch (err) {
+    console.log("Registration Error:", err)
+    return res.status(500).send("Error registering user.");
+  }
 });
 
 app.get("/protected", authMiddleware, (req, res) => {
