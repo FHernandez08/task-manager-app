@@ -66,7 +66,9 @@ app.post("/login", async (req, res) => {
       data: token,
       user: {
         id: user._id,
-        email: user.email
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName
       }
     });
   } catch (err) {

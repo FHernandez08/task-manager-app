@@ -98,7 +98,7 @@ input {
   padding: 5px;
 }
 
-.logout-btn {
+#logout-btn {
     background-color: #222; /* Dark background */
     color: #fff; /* White text */
     padding: 10px 16px;
@@ -110,7 +110,13 @@ input {
     cursor: pointer;
 }
 
-.logout-btn:hover {
+#logout-btn:hover {
     background-color: #fff;
     color: #222;
+}
+
+body.dark-mode #logout-btn {
+  background-color: #333;
+  border-radius: 1px solid #fff;
+  color: #fff;
 }

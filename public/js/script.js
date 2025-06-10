@@ -14,7 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
     welcomeMessage.textContent = `Welcome, ${firstName} ${lastName}!`;
     loginForm.style.display = "none";
     registerForm.style.display = "none";
+    loginBtn.style.display = "none";
+    registerBtn.style.display = "none";
     logoutBtn.style.display = "inline-block";
+  }
+  else {
+    welcomeMessage.textContent = "Welcome to the Task Manager App!";
+    loginBtn.style.display = "inline-block";
+    registerBtn.style.display = "inline-block";
+    logoutBtn.style.display = "none";
   }
 
   loginBtn.addEventListener("click", () => {
@@ -76,6 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
       welcomeMessage.textContent = `Welcome, ${data.user.firstName} ${data.user.lastName}!`;
       loginForm.style.display = "none";
       registerForm.style.display = "none";
+
+      loginBtn.style.display = "none";
+      registerBtn.style.display = "none";
       logoutBtn.style.display = "inline-block";
     } else {
       alert("Login failed: " + (data.message || "Unknown error"));
@@ -85,6 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Logout
   logoutBtn.addEventListener("click", () => {
     localStorage.clear();
+    welcomeMessage.textContent = "Welcome to the Task Manager App!";
+    loginBtn.style.display = "inline-block";
+    registerBtn.style.display = "inline-block";
+    logoutBtn.style.display = "none";
     location.reload(); // Reload to reset UI and show default welcome message
   });
 });
