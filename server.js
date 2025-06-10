@@ -16,7 +16,7 @@ app.use(express.json());
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://localhost:27017/task-manager-users", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -24,6 +24,10 @@ mongoose
   .catch((err) => console.log("Error connecting to MongoDB", err));
 
 // Routes
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public","index.html"));
+});
+
 //// uses async/await to ensure that the details are being processed before continuing onto the next portion of the code
 app.post("/login", async (req, res) => {
   // get the details from email and password input -> collected from req.body
