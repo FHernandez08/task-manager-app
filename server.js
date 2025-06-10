@@ -118,7 +118,7 @@ app.get("/protected", authMiddleware, (req, res) => {
   });
 });
 
-app.listen(PORT, (req, res) => {
+app.listen(PORT, () => {
   console.log(`Server is now listening on port ${PORT}!`);
   console.log(
     `Can access the application by clicking on: http://localhost:${PORT}`
