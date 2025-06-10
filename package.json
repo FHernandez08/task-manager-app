@@ -2,7 +2,7 @@
   "name": "task-manager-app",
   "version": "1.0.0",
   "description": "- Can add tasks\r - Delete tasks\r - Edit tasks\r - Turn the page either dark mode or light mode",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
